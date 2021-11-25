@@ -1,0 +1,3 @@
+# Ngprj
+
+Web application, creata nell'ambito del corso intensivo Develhope per gestire progetti e realtivi task etc etc...

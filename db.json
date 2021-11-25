@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "code": "NHusYJl",
+      "name": "Progetto Alpha",
+      "description": "Lorem ipsum dolor sit amet.",
+      "start": "2021-03-01T23:00:00.000Z",
+      "end": "2021-04-14T22:00:00.000Z",
+      "priority": "medium",
+      "done": true
+    },
+    {
+      "id": 2,
+      "code": "SJieYKL",
+      "name": "Progetto Beta",
+      "description": "Lorem ipsum dolor sit amet.",
+      "start": "2019-04-29T22:00:00.000Z",
+      "end": "2021-12-12",
+      "priority": "low",
+      "done": true,
+      "tasks": [
+        {
+          "name": "Primo task"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "code": "POjeGBs",
+      "name": "Progetto Gamma",
+      "description": "Lorem ipsum dolor sit amet.",
+      "start": "2019-09-14T22:00:00.000Z",
+      "priority": "low",
+      "done": false,
+      "end": "2021-11-10",
+      "tasks": [
+        {
+          "name": "Primo task"
+        }
+      ]
+    },
+    {
+      "name": "Test progetto",
+      "priority": "medium",
+      "start": "2021-10-01",
+      "description": "Prova test add tasks",
+      "code": "o3c0gi3",
+      "done": false,
+      "id": 4,
+      "end": "2021-11-03",
+      "tasks": [
+        {
+          "name": "Terzo task"
+        }
+      ]
+    }
+  ],
+  "tasks": []
+}

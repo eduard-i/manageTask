@@ -1,0 +1,30 @@
+<form class="row g-3" [formGroup]="projectForm" (ngSubmit)="submit()">
+  <div class="clo-md-4">
+    <label for="validationDefaultUsername" class="form-label">Chiusura</label>
+    <input type="date" name="end" class="form-control" placeholder="Data Fine" formControlName="end">
+    <p *ngIf="projectForm.controls['end'].invalid" class="text-danger"><small>Il campo è richiesto</small></p>
+  </div>
+
+  <div class="clo-md-12">
+    <label for="description" class="form-label">Description</label>
+    <textarea name="description" class="form-control" placeholder="Descrizione" formControlName="description"></textarea>
+    <p *ngIf="projectForm.controls['description'].invalid" class="text-danger"><small>Il campo è richiesto</small></p>
+  </div>
+
+  <div formArrayName="tasks">
+    <div class="col text-right">
+      <button class="btn btn-light btn-sm" (click)="addTask()" [disabled]="!projectForm.valid">Aggiungi Task</button>
+    </div>
+    <div *ngFor="let skill of tasks.controls; let i=index">
+      <div class="input-group mb-3" [formGroupName]="i">
+        <input type="text" class="form-control" placeholder="task name" formControlName="name">
+        <button class="btn btn-danger" type="button" (click)="deleteTask(i)">X</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" [disabled]="!projectForm.valid" class="w-100 btn btn-primary btn-lg">Modifica</button>
+  </div>
+
+</form>

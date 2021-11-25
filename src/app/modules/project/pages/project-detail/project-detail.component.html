@@ -1,0 +1,35 @@
+<ngprj-section-header
+  [title]="'Dettaglio progetto'"
+  [button]="{ label: 'Vai ai Progetti', link: '/projects' }"
+>
+</ngprj-section-header>
+
+<ng-container *ngIf="project$ | async as project">
+  <div class="container-fluid py-5">
+    <ngprj-card>
+
+      <ng-container data-body>
+        <h1 class="display-5 fw-bold">{{ project.name }}</h1>
+        <h2>{{ project.start | date }}</h2>
+      </ng-container>
+
+      <ng-container data-footer>
+        <p class="col-md8 fs-4">{{ project.description }}</p>
+
+        <ng-container *ngIf="project.tasks">
+          <h3>Tasks:</h3>
+          <div *ngFor="let task of project.tasks">
+            <p>-{{ task.name }}</p>
+          </div>
+        </ng-container>
+
+      </ng-container>
+    </ngprj-card>
+  </div>
+
+<ngprj-project-form-rf
+  [project]="project"
+  (submitted)="updateProject($event, project.id)"
+></ngprj-project-form-rf>
+
+</ng-container>
